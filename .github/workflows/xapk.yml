@@ -41,7 +41,8 @@ jobs:
           ./merge_build.sh "${{ github.event.inputs.region }}"
 
       - name: Release and Upload Assets
-        uses: ncipollo/release-action@v1
+        # 關鍵修改：這裡原本是 @v1，改成 @v1.14.0 才能解決 set-output 錯誤
+        uses: ncipollo/release-action@v1.14.0
         with:
           tag: "${{ env.JMBQ_VERSION }}-XAPK"
           name: "AzurLane JMBQ ${{ env.JMBQ_VERSION }} Build XAPK"
