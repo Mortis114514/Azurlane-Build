@@ -442,7 +442,7 @@ CREATE_SPLIT_ARCHIVES() {
     7z a -v800M "${GAME_SERVER}-V.${GAME_VERSION}.7z" "${FINAL_FILE}" || {
         echo "错误: 7z 压缩失败！"
         exit 1
-    
+    }
     echo "分卷压缩完成: ${GAME_SERVER}-V.${GAME_VERSION}.7z"
 }
 
